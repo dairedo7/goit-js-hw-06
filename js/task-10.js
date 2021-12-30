@@ -9,23 +9,29 @@ createBox.addEventListener("click", () => {
 });
 
 destroyBox.addEventListener("click", () => {
-  return currentBoxes.innerHTML = "";
+  currentBoxes.innerHTML = "";
+  props = 30;
 });
+
+let props = 30;
 
 function boxCreator(number) {
   const divArr = [];
 
   for (let i = 0; i < number; i++) {
+    props += 10;
+
     const divEl = document.createElement('div');
-    divEl.style.width = `${30 + 10 * i}px`;
-    divEl.style.height = `${30 + 10 * i}px`;
+
+    divEl.style.width = `${props}px`;
+    divEl.style.height = `${props}px`;
     divEl.style.backgroundColor = getRandomHexColor();
     divEl.style.margin = "5px";
 
     divArr.push(divEl);
+
   }
   currentBoxes.append(...divArr);
-
 }
 
 function getRandomHexColor() {
