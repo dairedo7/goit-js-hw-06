@@ -9,11 +9,16 @@ const ingredients = [
 
 let ingr = document.querySelector("#ingredients");
 
-let sortedIngr = ingredients.map((element) => {
+let ingrArr = [];
+
+let sortedArr = ingredients.map((element) => {
   let newIngr = document.createElement("li");
   newIngr.textContent = element;
-  ingr.append(newIngr);
+
+  return ingrArr.push(newIngr);
 })
+
+ingr.append(...ingrArr);
 
 // const reversedIngrs = ingredients.reverse();
 // for (let i = 0; i < reversedIngrs.length; i++) {
