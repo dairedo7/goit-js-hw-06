@@ -10,9 +10,10 @@ function sendForm(evt) {
     } = evt.currentTarget;
 
     if (email.value === "" || password.value === "") {
-        return console.log(`Please fill in login and password fields`);
+        return alert(`Please fill in login and password fields`);
     }
 
+    // alert(evt = { email, password, });
     console.log(`Login: ${email.value}, password: ${password.value}`);
     evt.currentTarget.reset();
 }

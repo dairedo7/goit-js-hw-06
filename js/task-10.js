@@ -5,7 +5,9 @@ const currentBoxes = document.querySelector('#boxes');
 
 createBox.addEventListener("click", () => {
   boxCreator(inputNumber.value);
+  inputNumber.value = "";
 });
+
 destroyBox.addEventListener("click", () => {
   return currentBoxes.innerHTML = "";
 });
@@ -23,6 +25,7 @@ function boxCreator(number) {
     divArr.push(divEl);
   }
   currentBoxes.append(...divArr);
+
 }
 
 function getRandomHexColor() {
